@@ -1,8 +1,40 @@
+.Nav{
+    background-color: #4A8FEE;
+}
+
+body{
+    padding: 5px;
+}
+
 .greeting {
     color:#ff2f82;
     padding-left: 50px;
 }
 
 .counter {
-    color: #ff2f82;
+    color: #ffffff;
+}
+
+.boton {
+    background-color: #ff2f82;
+}
+
+.boton2 {
+    background-color: blueviolet;
+}
+
+.card {
+    background-color: #ff2f82;
+}
+
+.controls {
+    color: white;
+    list-style: none;
+    padding-right: 5rem;
+}
+
+.pp {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+
 }

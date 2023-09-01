@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 const Contact = () => {
   useEffect(() => {
     const clicking = () => {
-      console.log("click")
+
     }
   window.addEventListener("click",clicking )
 

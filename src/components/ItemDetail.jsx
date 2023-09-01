@@ -1,61 +1,48 @@
-import {  useState, useMemo } from "react"
-import Counter from "./Counter"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import { CartContext} from "../context/CartContext"
+import Counter from "./Counter"
+import { Button,Box } from "@chakra-ui/react"
 
 
-const ItemDetail = ({id, name, price, category, img, stock}) => {
+const ItemDetail = ({ id, Itemname, name, img, category, description, price, stock }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0)
 
+  const { addItem } = useContext(CartContext)
 
+  const handleOnAdd = (quantity) => {
+      setQuantityAdded(quantity)
 
+      const item = {id,name,price}
 
-    const [quantity, setQuantity] = useState(1)
+      addItem(item, quantity)
+  }
 
-    const handleAdd = () => {
-        const item = {
-            id, 
-            name, 
-            price, 
-            category,  
-            img, 
-            stock, 
-            quantity
-        }
-        
-        addToCart(item)
-    }
+  return (
+    <div>
+      <div className="item-detail">
+        <img src={img} alt={name} />
 
-    
-    const handleBack = () => {
-        navigate(-1)
-    }
+        <h3>{Itemname}</h3>
 
-    const date = useMemo(() => new Date().toLocaleString(), [quantity])
+        <h2>Description</h2>
+        <p>{description}</p>
 
-    return (
-        <div className="container my-5">
-            <h2>{name}</h2>
+        <p>Price:$ {price}</p>
 
-            <img className="img" src={img} alt={name}/>
- 
-            <h4>Price: ${price}</h4>
-            <br/>
+        <p>{item.category}</p>
 
-            <small>Category: {category}</small>
-            <br/>
-        
-            {
-                isInCart(id)
-                    ?   <Link className="btn btn-success" to="/cart">Confirm buy</Link>
-                    :   <Counter
-                            max={stock}
-                            quantity={quantity}
-                            setQuantity={setQuantity}
-                            handleAdd={handleAdd}
-                        />
+        <Button>Add to Cart</Button>
+        {
+          quantityAdded > 0 ? (
+         <Link to='/cart' className="OptionDetail">End buy</Link>
+          ) : (
+          <Counter initial={1} stock={stock} onAdd={handleOnAdd} />
+               )
             }
-            <button onClick={handleBack} className="btn btn-primary">Back</button>
-        </div>
+      </div>
+      </div>
     )
-}
-
-export default ItemDetail
+  }
+  
+  export default ItemDetail;

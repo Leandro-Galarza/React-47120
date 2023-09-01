@@ -1,39 +1,35 @@
 import { Button } from "@chakra-ui/react"
+import { useState } from "react"
 
-const Counter = ({ quantity, setquantity, handleAdd }) => {
-    
+const Counter = ({ stock, initial, onAdd }) => {
+    const [quantity, setQuantity] = useState(1)
 
-  const handleSumar = () => {
-      quantity < max && setquantity(quantity + 1)
-  }
+    const increment = () => {
+        if (quantity < stock) {
+            setQuantity(quantity + 1)
+        }
+    }
 
-  const handleRestar = () => {
-      quantity > 1 && setquantity(quantity - 1)
-  }
+    const decrement = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
+        }
+    }
 
-
-  return (
-      <div>
-          <button 
-              onClick={handleRestar} 
-              className={`btn  ${quantity === 1 ? "btn btn-primary" : "btn btn-primary"}`}
-              disabled={quantity === 1}
-          >
-              -
-          </button>
-
-          <span className="mx-1">{quantity}</span>
-          <button 
-              onClick={handleSumar} 
-              className={quantity === max ? "btn btn-primary" : "btn btn-primary"}
-              disabled={quantity === max}
-          >
-              +
-          </button>
-          <br/>
-          <button onClick={handleAdd} className="btn btn-success my-2">Add to cart</button>
-      </div>
-  )
+    return (
+        <div className='Counter'>
+            <div className='Controls'>
+                <Button className='Button' onClick={decrement}>-</Button>
+                <h4 className='Number'>{quantity}</h4>
+                <Button className='Button' onClick={increment}>+</Button>
+            </div>
+            <div>
+                <button className='ButtonBuy' onClick={() => onAdd(quantity)} disabled={!stock} >
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    )
 }
 
 export default Counter

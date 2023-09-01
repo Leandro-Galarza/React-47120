@@ -1,15 +1,13 @@
 import React from 'react'
 import Item from './Item'
 
-const ItemList = ({Items= []}) => {
-
+const ItemList = ({ products }) => {
   return (
-    <div>
-        {
-            Items.map((Products) => <Item key={Products.id} {...Products}/>)
-        }
-    </div>
-)
+      <div className='ListGroup'>
+          {products.map(prod => <Item key={prod.id} {...prod} />)}
+
+      </div>
+  )
 }
 
-export default ItemList
+export default ItemList;

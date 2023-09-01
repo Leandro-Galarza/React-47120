@@ -4,7 +4,6 @@ const About = () => {
 
   useEffect(() => {
     const clicking = () => {
-      console.log("click")
     }
   window.addEventListener("click",clicking )
 

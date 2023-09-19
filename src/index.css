@@ -1,45 +1,216 @@
-.Nav{
-    background-color: #4A8FEE;
+/*NAVBAR*/
+
+.ChevronB {
+  margin-right: 11rem;
 }
 
-body{
-    padding: 5px;
-    background-color: #666666;
-}
-
-.greeting {
-    color:#ff2f82;
-    padding-left: 50px;
-}
-
-.counter {
-    color: #ffffff;
-}
-
-.boton {
-    background-color: #ff2f82;
-}
-
-.boton2 {
-    background-color: blueviolet;
-}
-
-.card {
-    background-color: #ff2f82;
-}
-
-.controls {
-    color: white;
-    list-style: none;
-    padding-right: 5rem;
+.controls ul li {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  padding-right: 5rem;
+  font-weight: bold;
 }
 
 .pp {
-    font-size: 1.5rem;
-    margin-top: 3rem;
-
+  font-size: 1.5rem;
+  margin-top: 3rem;
 }
 
 .IDT {
-    background-color: #4A8FEE;
+  background-color: #4a8fee;
 }
+
+.Nav {
+  background-color: #0451be;
+}
+
+body {
+  padding: 5px;
+  background-color: #666666;
+}
+
+.greeting {
+  color: #ff2f82;
+  padding-left: 50px;
+}
+
+.counter {
+  color: #ffffff;
+}
+
+.boton {
+  background-color: #ff2f82;
+}
+
+.boton2 {
+  background-color: blueviolet;
+}
+
+.card {
+  background-color: #ff2f82;
+}
+
+/*About*/
+
+.abC {
+  margin: 50px;
+  margin-bottom: 8rem;
+  position: relative;
+}
+
+.abH {
+  width: 1500px;
+  height: 650px;
+}
+
+.abT {
+  position: absolute;
+  top: 25%;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.P2 {
+  text-align: center;
+}
+
+/*contact*/
+
+.store-info {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10rem;
+  margin-bottom: 20.2rem;
+}
+
+.store-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.store-address {
+  font-size: 16px;
+  color: #555;
+}
+
+.store-phone {
+  font-size: 18px;
+  color: #333;
+}
+
+.store-email {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.store-legend {
+  margin-top: 2rem;
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+}
+
+      /*Contact-Icons*/
+
+.contact-icons-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+}
+
+.contact-icon-item {
+  margin: 0 3rem;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-link {
+  font-size: 30px;
+  color: #808080;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-facebook:hover {
+  color: #3b5998;
+  transform: scale(1.1);
+}
+
+.icon-linkedin:hover {
+  color: #0e76a8;
+  transform: scale(1.1);
+}
+
+.icon-github:hover {
+  color: #303030;
+  transform: scale(1.1);
+}
+
+/*cart*/
+
+.eCC {
+  margin: 50px;
+  margin-bottom: 9.5rem;
+  position: relative;
+  background-color: #000000e5;
+}
+
+.eCH{
+  margin-left: 8.5rem;
+}
+
+.eCT {
+  position: absolute;
+  top: 40%;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/*Cart Widget*/
+
+.cart {
+  position: fixed;
+  bottom: 115px;
+  right: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #cb3636;
+  background-color: #ffffff;
+  padding: 9px 10px;
+  border-radius: 50%;
+  text-align: center;
+  animation: vibrar-pausa 3s infinite;
+  z-index: 1;
+}
+  .icon-cart {
+    font-size: 32px;
+  }
+
+  .number {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 18px;
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

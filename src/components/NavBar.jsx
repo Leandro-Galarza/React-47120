@@ -1,8 +1,9 @@
-import { Menu, MenuButton,Button, MenuList, MenuItem, Flex, Box, Spacer} from '@chakra-ui/react'
+import { Menu, MenuButton,Button, MenuList, MenuItem, Flex, Box, Spacer, Center} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import CartWidget from './CartWidget'
 import logo from '../assets/FMKLogo.png'
+import cartIcon from '../assets/shoppingCartIcon.png'
 
 
 const NavBar = () => {
@@ -15,12 +16,17 @@ const NavBar = () => {
         </Box>
 
         <Spacer />
-        
+        <Center>
         <Menu> 
+          <div className='ChevronB'>
     <MenuButton as={Button} rightIcon={<ChevronDownIcon />}
                              leftIcon={<ChevronDownIcon />}>
       Categories
     </MenuButton>
+    </div>
+
+
+
     <MenuList>
       <MenuItem>
     <Link to={`/category/Guitars`}>
@@ -45,10 +51,11 @@ const NavBar = () => {
       <Spacer />
     </MenuList>
   </Menu>
+  </Center>
   <Spacer />
 
   <Box className='controls'>
-    <ul>
+    <ul className='controlsbtn'>
   <li> <Link to="/about">About</Link> </li>
   <li> <Link to="/contact">Contact</Link> </li>
     </ul>
@@ -56,7 +63,8 @@ const NavBar = () => {
 
   <Box p="2">
 <Link to={"/cart"}>
-  < CartWidget />
+<img src={cartIcon} width='32px' height='32px' ></img>
+  <CartWidget/>
   </Link>
   </Box>
   </Flex>

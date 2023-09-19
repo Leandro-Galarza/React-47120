@@ -3,14 +3,15 @@ import { CartProvider } from './context/CartContext'
 import NavBar from './components/NavBar'
 import ItemListCointainer from './components/ItemListCointainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import Cart from './components/Cart'
 import Checkout from './components/Checkout'
+import Cart from './components/Cart'
 import CartWidget from './components/CartWidget'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 import ItemListContainer from './components/ItemListCointainer'
 import Footer from './components/Footer'
+
 
 
 const App = () => {

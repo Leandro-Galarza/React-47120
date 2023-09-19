@@ -1,8 +1,9 @@
+import { Flex, Box } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
-import { Flex, Box } from '@chakra-ui/react'
-import cartIcon from '../assets/Shoppingcarticon.png'
+import cartIcon from '../assets/ShoppingCartIcon.png'
+
 
 const CartWidget = () => {
   const { cart } = useContext(CartContext);
@@ -12,11 +13,13 @@ const CartWidget = () => {
   return (
     <Flex>
       <Box>
+        
       <Link to='/cart' className='cart' style={{ display: totalQuantity > 0 ? 'block' : 'none' }}>
-          <img src={cartIcon} alt="cart image"  width = '30px' height = '30px' />
-          <span className='number'>{totalQuantity}</span>
+          <img className='icon-cart' src={cartIcon} alt="cart image"  width ='300px' height ='300px' />
       </Link>
+      
       </Box>
+      <span className='number'>{totalQuantity}</span>
       </Flex>
   )
 }

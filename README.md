@@ -3,4 +3,4 @@
 
 
 
-[LinkedIn](Added soon)
+[LinkedIn](https://www.linkedin.com/in/leandro-galarza-268822261/)

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getDocs, collection, query, where} from 'firebase/firestore'
-import { db } from '../config/Firebase'
-import ItemList from './ItemList'
+import { db } from '../config/firebase'
+import ItemList from '../components/ItemList'
 
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
 
   const { categoryId } = useParams();
 
@@ -28,6 +30,7 @@ const ItemListContainer = ({ greeting }) => {
         setProducts(productsAdapted);
       })
       .catch((error) => {
+        console.log(error);
    
       })
       .finally(() => {
@@ -40,7 +43,7 @@ const ItemListContainer = ({ greeting }) => {
       (product) =>
         product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.nameitem.toLowerCase().includes(searchTerm.toLowerCase())
+        product.itemname.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
   };
@@ -54,4 +57,4 @@ const ItemListContainer = ({ greeting }) => {
   );
 };
   
-  export default ItemListContainer;
+export default ItemListContainer;

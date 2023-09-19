@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import {Card, CardHeader,CardBody, CardFooter, Stack, Divider, Heading, Text, Button, Flex, Image,} from '@chakra-ui/react'
+import {Card, CardHeader, Stack, Divider, Heading, Text, Button, Flex, Image,} from '@chakra-ui/react'
 
 const Item = ({ id, name, img, price, stock }) => {
 
   return (
-<>
+
 
 <Card
   w="200px"
@@ -25,7 +25,7 @@ const Item = ({ id, name, img, price, stock }) => {
         Price: ${price}
       </Text>
       <Text>
-        Stock:{stock}
+        Stock: {stock}
       </Text>
     </Flex>
 
@@ -46,7 +46,7 @@ const Item = ({ id, name, img, price, stock }) => {
 
   </Stack>
 </Card>
-</>
+
 
     )
     }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Center } from '@chakra-ui/react'
 
 const About = () => {
 
@@ -13,8 +14,19 @@ return () => {
 } }, [])
 
   return (
-    <div  className='pp'>About
-      <p>this is about page</p>
+    <div  className='abC'>
+        <Center>
+        <div className='abT'>
+      <p>
+       Welcome to Fake Music Store, where we deliver dreams 
+      </p>
+      <h4 className='P2'>
+      through the power of music.
+      </h4>
+      </div>
+      <img className='abH' src="https://static.roland.com/assets/promos/jpg/billboard_me-90.jpg"/>
+      </Center>
+
     </div>
   )
 }

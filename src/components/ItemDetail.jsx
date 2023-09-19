@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext} from "../context/CartContext"
 import Counter from "./Counter"
-import { Button,Box } from "@chakra-ui/react"
+import { Button} from "@chakra-ui/react"
 
 
 const ItemDetail = ({ id, Itemname, name, img, category, description, price, stock }) => {
@@ -21,6 +21,7 @@ const ItemDetail = ({ id, Itemname, name, img, category, description, price, sto
   return (
     <div>
       <div className="item-detail">
+        <h2>{name}</h2>
         <img src={img} alt={name} />
 
         <h3>{Itemname}</h3>

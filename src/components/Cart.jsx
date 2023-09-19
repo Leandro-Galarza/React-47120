@@ -2,21 +2,28 @@ import { useContext } from "react"
 import { CartContext} from "../context/CartContext"
 import CartItem from "./CartItem"
 import { Link } from "react-router-dom"
-import { Button } from "@chakra-ui/react"
+import { Button, Center } from "@chakra-ui/react"
 
 const Cart = () => {
   const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
 
   if (totalQuantity === 0) {
     return (
-      <div>
-        <h1>Empty Cart</h1>
-        <img
-          src="https://pbs.twimg.com/media/FJK-epaXEAYaQFv?format=jpg&name=small"
-          alt="Compra invisible"/>
-        <p>Que no cunda el pánico...</p>
-        <p>Talvez las compras sean invisibles!</p>
-        <Link to="/">Volver A Productos</Link>
+      <div className="eCC">
+        <Center>
+
+        <img className="eCH"
+          src="https://img.freepik.com/premium-photo/person-feeling-loneliness-surreal-illustration_796245-319.jpg"
+          alt="Empty cart/empty heart"/>
+          <Button className="eCB">
+        <Link to="/">Back to Home</Link>
+        </Button>
+        </Center>
+        <div className="eCT">
+        <h1>Your cart is currently empty</h1>
+        <h1>empty as the empty that remains </h1>
+        <h1>when she left </h1>
+        </div>
       </div>
     );
   }

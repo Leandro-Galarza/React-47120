@@ -1,8 +1,9 @@
-import { Flex, Box } from '@chakra-ui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
-import cartIcon from '../assets/ShoppingCartIcon.png'
+
 
 
 const CartWidget = () => {
@@ -11,16 +12,10 @@ const CartWidget = () => {
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <Flex>
-      <Box>
-        
-      <Link to='/cart' className='cart' style={{ display: totalQuantity > 0 ? 'block' : 'none' }}>
-          <img className='icon-cart' src={cartIcon} alt="cart image"  width ='300px' height ='300px' />
+      <Link to='/cart' className='carrito' style={{ display: totalQuantity > 0 ? 'block' : 'none' }}>
+          <FontAwesomeIcon className='icono-carrito' icon={faCartShopping} />
+          <span className='numerito'>{totalQuantity}</span>
       </Link>
-      
-      </Box>
-      <span className='number'>{totalQuantity}</span>
-      </Flex>
   )
 }
 

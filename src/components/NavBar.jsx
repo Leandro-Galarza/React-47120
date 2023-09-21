@@ -64,7 +64,7 @@ const NavBar = () => {
   <Box p="2">
 <Link to={"/cart"}>
 <img src={cartIcon} width='32px' height='32px' ></img>
-  <CartWidget/>
+
   </Link>
   </Box>
   </Flex>

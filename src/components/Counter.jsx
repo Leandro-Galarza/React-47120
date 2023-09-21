@@ -24,12 +24,12 @@ const Counter = ({ stock, initial, onAdd }) => {
                 <Button className='Button' onClick={increment}>+</Button>
             </div>
             <div>
-                <button className='ButtonBuy' onClick={() => onAdd(quantity)} disabled={!stock} >
+                <Button className='ButtonBuy' onClick={() => onAdd(quantity)} disabled={!stock} >
                     Add to cart
-                </button>
+                </Button>
             </div>
         </div>
     )
 }
 
-export default Counter
+export default Counter;

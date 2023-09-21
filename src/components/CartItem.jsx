@@ -15,8 +15,8 @@ const CartItem = ({ id, name, price, quantity }) => {
     return (
       <div className="CartItem">
         <p className="CartItem__Name">{name}</p>
-        <p className="CartItem__Price">Precio: ${price}</p>
-        <p className="CartItem__Quantity">Cantidad: {quantity}</p>
+        <p className="CartItem__Price">Price: ${price}</p>
+        <p className="CartItem__Quantity">quantity: {quantity}</p>
         <p className="CartItem__Subtotal">Subtotal: ${subtotal}</p>
         <p className="CartItem__RemoveIcon" onClick={handleRemoveItem}>
           <FontAwesomeIcon icon={faTrash} />

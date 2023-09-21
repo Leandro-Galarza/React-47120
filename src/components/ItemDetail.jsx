@@ -2,10 +2,9 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext} from "../context/CartContext"
 import Counter from "./Counter"
-import { Button} from "@chakra-ui/react"
 
 
-const ItemDetail = ({ id, Itemname, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, nameitem, name, img, description, price, stock }) => {
   const [quantityAdded, setQuantityAdded] = useState(0)
 
   const { addItem } = useContext(CartContext)
@@ -13,37 +12,49 @@ const ItemDetail = ({ id, Itemname, name, img, category, description, price, sto
   const handleOnAdd = (quantity) => {
       setQuantityAdded(quantity)
 
-      const item = {id,name,price}
+      const item = {
+          id,
+          name,
+          price
+      }
 
       addItem(item, quantity)
   }
 
   return (
-    <div>
-      <div className="item-detail">
-        <h2>{name}</h2>
-        <img src={img} alt={name} />
-
-        <h3>{Itemname}</h3>
-
-        <h2>Description</h2>
-        <p>{description}</p>
-
-        <p>Price:$ {price}</p>
-
-        <p>{item.category}</p>
-
-        <Button>Add to Cart</Button>
-        {
-          quantityAdded > 0 ? (
-         <Link to='/cart' className="OptionDetail">End buy</Link>
-          ) : (
-          <Counter initial={1} stock={stock} onAdd={handleOnAdd} />
-               )
-            }
+      <div className="CardItemDetail">
+          <div className="ImageContainer">
+              <h2 className="ItemHeaderDetail">
+                  {name}
+              </h2>
+              <picture>
+                  <img src={img} alt={name} className="ItemImgDetail" />
+              </picture>
+          </div>
+          <div className="DescriptionContainer">
+              <section>
+                  <p className="InfoCategory">
+                      {nameitem}
+                  </p>
+                  <div className="InfoDescripcion">
+                      <h2>Descripcion</h2>
+                      <p>{description}</p>
+                  </div>
+                  <p className="InfoPrice">
+                      Price:$ {price}
+                  </p>
+              </section>
+              <footer className="ItemFooterDetail">
+                  {
+                      quantityAdded > 0 ? (
+                          <Link to='/cart' className="OptionDetail">Place Order</Link>
+                      ) : (
+                          <Counter initial={1} stock={stock} onAdd={handleOnAdd} />
+                      )
+                  }
+              </footer>
+          </div>
       </div>
-      </div>
-    )
-  }
-  
+  )
+}
   export default ItemDetail;

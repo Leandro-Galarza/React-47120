@@ -49,7 +49,7 @@ const Checkout = () => {
                 setOrderId(orderAdded.id)
                 clearCart()
             } else {
-                console.error('Hay productos que estan fuera de stock')
+                console.error('Some products are currently out of stock')
             }
         } catch (error) {
   
@@ -63,10 +63,10 @@ const Checkout = () => {
             {loading && <h1 className="loadingMessage">processing your payment...</h1>}
             {orderId ? (
                 <div>
-                    <h1 className="order-id">El id de su orden es: {orderId}</h1>
+                    <h1 className="order-id">Your ID Order is: {orderId}</h1>
                     <h2 className="Gracias">Thanks for buying on Fake music Store!</h2>
                     <img
-                        src="https://i.gifer.com/origin/61/61b07c5d234ac62a485bbc1ef5cb0da8_w200.webp"
+                        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW9uYWd6cTFxcWdvMG5hYjJhZXg2bmp0ODhqNGJoaDEwamdiazQxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZfK4cXKJTTay1Ava29/giphy.gif"
                         alt="thxfor"
                         className="thxImg"
                     />

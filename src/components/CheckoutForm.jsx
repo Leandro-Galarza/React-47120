@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@chakra-ui/react";
 
 const CheckoutForm = ({ onConfirm }) => {
   const [name, setName] = useState("");
@@ -70,9 +71,9 @@ const CheckoutForm = ({ onConfirm }) => {
           <p className="error">Please complete all the current spaces</p>
         )}
         <div className="form-btn-container">
-          <button className="form-btn" type="submit">
+          <Button className="form-btn" type="submit">
             Create order
-          </button>
+          </Button>
         </div>
       </form>
     </div>

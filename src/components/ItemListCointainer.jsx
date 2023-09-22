@@ -50,7 +50,6 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <h1>All products</h1>
       <h1>{greeting}</h1>
       {loading ? <p>Loading...</p> : <ItemList products={filteredProducts.length > 0 ? filteredProducts : products} />}
     </div>

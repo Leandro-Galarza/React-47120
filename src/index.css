@@ -179,6 +179,29 @@ body {
   padding: 20px;
 }
 
+/*cartitem*/
+
+.CartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  margin: 15px;
+  border: 2px solid #1e2acf;
+  border-radius: 10px;
+  background-color: #F2F2F2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.CartItem__RemoveIcon {
+  cursor: pointer;
+  color: #f33412;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  }
+
+
 /*Cart Widget*/
 
 .cart {
@@ -271,6 +294,17 @@ body {
   font-weight: 600;
   color: #ff2049;
 }
+
+/*ITEM LIST*/
+
+.ListGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  padding: 15px;
+  margin: 15px;
+}
+
 
 /*item detail*/
 
@@ -387,3 +421,51 @@ body {
 }
 
 
+/*Counter*/
+
+.Counter .Controls {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.Counter .Controls .Button {
+  margin: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.Counter .Controls .Button:hover {
+  background-color: rgba(255, 0, 0, 0.253);
+}
+
+.Counter .Controls .Number {
+  padding: 7px;
+  font-weight: bold;
+}
+
+.ButtonBuy {
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #b8b8b8ad;
+  border-radius: 40px;
+}
+
+/*Form*/
+
+
+
+
+.form-input {
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin: 15px;
+}
+
+.form-btn {
+  margin: 20px;
+  margin-left: 5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
